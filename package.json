@@ -7,7 +7,8 @@
     "dev": "nodemon index.js",
     "lint": "eslint --format codeframe .",
     "lint:fix": "eslint --fix --format codeframe .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:migrate": "env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "eslint": "^7.26.0",
     "nodemon": "^2.0.7"
   }
