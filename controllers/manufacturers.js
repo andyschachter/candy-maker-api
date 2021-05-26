@@ -36,7 +36,8 @@ const getManufacturerBySearch = async (request, response) => {
       where: {
         name: { [models.Op.like]: `%${search}%` },
       },
-      include: [{ model: models.Products,
+      include: [{
+        model: models.Products,
         attributes: ['id', 'name', 'yearIntroduced']
       }]
     })
